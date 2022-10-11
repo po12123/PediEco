@@ -59,7 +59,7 @@ create table PRODUCTO
    DISPONIBLE           bool not null,
    primary key (IDPRODUCTO)
 );
-
+--hola estoy aqui
 alter table PRODUCTO add constraint FK_REGISTRA foreign key (IDENCARGADO)
       references ENCARGADODEESTABLECIMIENTO (IDENCARGADO) on delete restrict on update restrict;
 
