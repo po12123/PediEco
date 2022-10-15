@@ -1,8 +1,9 @@
 <?php
 include 'includes/conecta.php';
 error_reporting(0);
-if (isset($_REQUEST['guardar'])) {
+if (isset($_POST['guardar'])) {
     if (isset($_FILES['foto']['name'])) {
+        $numero = 0;
         $nombreEstablecimiento = $conecta -> real_escape_string($_POST['NombreEstablecimiento']);
         $direccionEstablecimiento = $conecta -> real_escape_string($_POST['DireccionEstablecimiento']);
         $nombreEncargado = $conecta -> real_escape_string($_POST['NombreEncargado']);
@@ -96,5 +97,10 @@ if (isset($_REQUEST['guardar'])) {
     </div>
     
   </section>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    var x = <?php echo $numero;?>;
+  </script>
+  <script src="js/sweetAlert.js"></script>
 </body>
 </html>

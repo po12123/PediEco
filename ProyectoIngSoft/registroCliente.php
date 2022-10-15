@@ -1,7 +1,9 @@
 <?php
 error_reporting(0);
+session_start();
 include 'includes/conecta.php';
-if (isset($_REQUEST['registrar'])) {
+if (isset($_POST['registrar'])) {
+   $numero = 0;
    $nombreCliente = $conecta -> real_escape_string($_POST['Nombre']);
    $apellidoCliente = $conecta -> real_escape_string($_POST['Apellidop']);
    $numCelCliente = $conecta -> real_escape_string($_POST['Telefono']);
@@ -11,11 +13,11 @@ if (isset($_REQUEST['registrar'])) {
    Email_Cliente, Password_Cliente) VALUES ('$nombreCliente', '$apellidoCliente', '$numCelCliente', 
    '$emailCliente', '$password')"; 
    $guardar = $conecta -> query($insertar);
-   if($guardar > 0){
-       $mensaje.="<h3 class='text-success'> Tu registro se realizo con exito </h3>";
-   }else{
-       $mensaje.="<h3 class='text-danger'> Tu registro no se realizo con exito </h3>";
-   }
+  if($guardar > 0){
+    $numero = 1;
+  }else{
+    $numero = 0;
+  }
 }
 ?>
          
@@ -26,7 +28,9 @@ if (isset($_REQUEST['registrar'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="css/style-registrarCliente.css">
   <title>Registro de cliente</title>
 </head>
 <body>
@@ -45,15 +49,16 @@ if (isset($_REQUEST['registrar'])) {
               <h5>Telefono:</h5>
               <input type="text" name="Telefono" placeholder="Ingrese el numero de telefono" class="form-control controls" required>
               <h5>Correo electronico:</h5>
-              <input type="text" name="Email" placeholder="Ingrese el correo electroinico" class="form-control controls" required>
+              <input type="text" name="Email" placeholder="Ingrese el correo electronico" class="form-control controls" required>
               <h5>Contraseña:</h5>
-              <input type="text" name="Password" placeholder="Ingrese una contraseña" class="form-control controls" required>
+              <input type="password" name="Password" placeholder="Ingrese una contraseña" class="form-control controls" required>
           </div>
           <div class="form-group">
-              <button><input class="botons" type="submit" value="Registrar" name="registrar"></button>
+              <button><input class="botons" type="submit" value="Registrar" name="registrar" id="registrado"></button>
               <button><input class="botons" type="submit" value="atras"></button>
           </div>
       </form>
+      
       <div id="imagenes">
       <img src="images/reloj.png" id="reloj" >
       <img src="images/lechuga.png" id="lechuga" >
@@ -63,5 +68,10 @@ if (isset($_REQUEST['registrar'])) {
     </div>
     
   </section>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    var x = <?php echo $numero;?>;
+  </script>
+  <script src="js/sweetAlert.js"></script>
 </body>
 </html>
