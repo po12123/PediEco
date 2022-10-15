@@ -1,0 +1,423 @@
+body {
+	font-family: "Open Sans", sans-serif;
+	margin: 0;
+	padding: 0;
+    background-color: #D8CEAB;
+}
+
+.main-registro {
+	display: flex;
+	flex-direction: column;
+}
+
+.registro-titulo {
+
+	margin: 150px auto 50px auto;
+    width: 350px;
+}
+
+#formulario{
+	display: flex;
+	flex-direction: column;
+	margin: 100px auto 10px auto;
+}
+
+.Subtitulo{
+    height: 60px;
+}
+
+.seccion-input {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	margin-bottom: 40px;
+}
+
+.seccion-input input{
+	border: none;
+	border-bottom: 1.5px solid #AEAEAE;
+	padding: 4px;
+	padding-left: 30px;
+	font-size: 16px;
+	height: 20px;
+    background-position: 5px 50%;
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+}
+.seccion-input.ultimo-input  input {
+	padding-right: 30px;
+}
+
+.ultimo-input{
+	margin-bottom: 15px;
+}
+
+.seccion-input input:focus{
+	outline: none;
+	border-bottom: 1.5px solid #68CF79;
+}
+
+.seccion-input input:focus::placeholder{
+	color: transparent;
+
+}
+.input-nombre{
+	background-image: url("../img/img-user.svg");
+}
+.input-nombre:focus{
+	background-image: url("../img/img-user-focus.svg");
+}
+.input-apellido{
+	background-image: url("../img/img-apellido.svg");
+}
+.input-apellido:focus{
+	background-image: url("../img/img-apellido-focus.svg");
+}
+.input-correo{
+	background-image: url("../img/img-correo.svg");
+}
+.input-correo:focus{
+	background-image: url("../img/img-correo-focus.svg");
+}
+
+.input-contrasena{
+	background-image: url("../img/img-contrasena.svg");
+}
+.input-contrasena:focus{
+	background-image: url("../img/img-contrasena-focus.svg");
+}
+.input-confirmarcontraseña{
+	background-image: url("../img/img-confirmarcontraseña.svg");
+}
+.input-confirmarcontraseña:focus{
+	background-image: url("../img/img-confirmarcontraseña-focus.svg");
+}
+
+#lechuga {
+    transform: matrix(-1, 0.03, 0.03, 1, 0, 0);
+    position: absolute;
+    width: 658.7px;
+    height: 830.46px;
+
+    top: 40%;
+    
+    
+    }
+    #reloj {
+    transform: rotate(41.52deg);
+    position: absolute;
+    width: 734px;
+    height: 711px;
+    left: 15%;
+    top: 50%;
+    }
+    #zanahoria {
+    transform: rotate(-59.35deg);
+    position: absolute;
+    width: 681.9px;
+    height: 643.16px;
+    left: 70%;
+    top: 50%;
+    }
+    #hamburguesa {
+    position: absolute;
+    width: 1179px;
+    height: 1298px;
+    left: 75%;
+    top: 30%;
+    
+    }
+
+.mensaje-error{
+	font-size: 12px;
+	color: #d31b1b;
+	/*color: lightslategrey;*/
+	margin: 5px auto 5px 5px;
+	height: 11px;
+}
+
+.boton-registrarse{
+    width: 300px;
+    height: 55px;
+	color: black;
+	border: none;
+	font-size: 18px;
+    background: #D9D9D9;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 5px auto;
+	box-shadow: 2px 3px 3px #AEAEAE;
+	align-items: center;
+     justify-content: center;
+     cursor: pointer;
+}
+.boton-registrarse:hover{
+	background: rgb(193, 112, 101);
+}
+
+.pregunta{
+	margin: 25px auto;
+    font-size: 20px;
+	color: #202020;
+}
+.pregunta a{
+    font-size: 20px;
+	text-decoration: none;
+	color: #D52F26;
+}
+
+.boton-ojo{
+	position: relative;
+	top: -45px;
+	left: 374px;
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.mostrar-contrasena{
+	background-image: url("../img/img-mostar-contrasena.svg");
+}
+.ocultar-contrasena{
+	background-image: url("../img/img-ocultar-contrasena.svg");
+}
+.mostrar-confirmarcontrasena{
+	background-image: url("../img/img-mostar-confirmarcontraseña.svg");
+}
+.ocultar-confirmarcontraseña{
+	background-image: url("../img/img-ocultar-confirmarcontraseña.svg");
+}
+
+
+/*Responsive*/
+
+@media screen and (max-height: 650px) and (max-width: 400px){
+	.main-registro{
+		margin-top: 20%;
+	}
+	.registro-titulo {
+		font-size: 55px;
+		margin: 20px auto 40px auto;
+	}
+	.seccion-input {
+		width: 300px;
+		margin-bottom: 18px;
+	}
+	.boton-ojo{
+		left: 250px;
+		width: 22px;
+		height: 22px;
+	}
+    #lechuga {
+        display: none;
+        }
+        #reloj {
+            display: none;
+        }
+        #zanahoria {
+            display: none;
+        }
+        #hamburguesa {
+            display: none;
+        }
+}
+
+@media screen and (min-height: 720px) and (max-width: 450px){
+	.main-registro{
+		margin-top: 25%;
+	}
+	.registro-titulo {
+		font-size: 55px;
+		margin: 20px auto 70px auto;
+	}
+	.seccion-input {
+		width: 350px;
+		margin-bottom: 25px;
+	}
+	.boton-ojo{
+		left: 320px;
+		width: 22px;
+		height: 22px;
+	}
+    #lechuga {
+        display: none;
+        }
+        #reloj {
+            display: none;
+        }
+        #zanahoria {
+            display: none;
+        }
+        #hamburguesa {
+            display: none;
+        }
+}
+
+@media screen and (min-height: 800px) and (max-width: 450px){
+	.main-registro{
+		margin-top: 30%;
+	}
+	.registro-titulo {
+		font-size: 55px;
+		margin: 20px auto 70px auto;
+	}
+	.seccion-input {
+		width: 350px;
+		margin-bottom: 25px;
+	}
+	.boton-ojo{
+		left: 320px;
+		width: 22px;
+		height: 22px;
+	}
+    #lechuga {
+        display: none;
+        }
+        #reloj {
+            display: none;
+        }
+        #zanahoria {
+            display: none;
+        }
+        #hamburguesa {
+            display: none;
+        }
+}
+
+
+
+@media screen and (min-height: 650px) and (max-width: 400px){
+	.main-registro{
+		margin-top: 20%;
+	}
+	.registro-titulo {
+		font-size: 55px;
+		margin: 20px auto 70px auto;
+	}
+	.seccion-input {
+		width: 340px;
+		margin-bottom: 25px;
+	}
+	.boton-ojo{
+		left: 310px;
+		width: 22px;
+		height: 22px;
+	}
+    #lechuga {
+        display: none;
+        }
+        #reloj {
+            display: none;
+        }
+        #zanahoria {
+            display: none;
+        }
+        #hamburguesa {
+            display: none;
+        }
+}
+
+
+@media screen and (max-height: 700px) and (max-width: 300px){
+	.main-registro{
+		margin-top: 20%;
+	}
+	.registro-titulo {
+		font-size: 40px;
+		margin: 20px auto 70px auto;
+	}
+	.seccion-input {
+		width: 270px;
+		margin-bottom: 25px;
+	}
+	.boton-ojo{
+		left: 240px;
+		width: 22px;
+		height: 22px;
+	}
+	.pregunta a{
+		display: block;
+		text-align: center;
+	}
+    #lechuga {
+        display: none;
+        }
+        #reloj {
+            display: none;
+        }
+        #zanahoria {
+            display: none;
+        }
+        #hamburguesa {
+            display: none;
+        }
+}
+
+@media screen and (max-height: 500px) and (max-width: 1300px){
+	.main-registro{
+		margin-top: 0%;
+	}
+	.registro-titulo {
+		font-size: 60px;
+		margin: 20px auto 10px auto;
+	}
+	.seccion-input {
+		margin-bottom: 15px;
+	}
+	.boton-ojo{
+		left: 370px;
+		width: 22px;
+		height: 22px;
+	}
+	.seccion-input.ultimo-input{
+		margin-bottom: 0px;
+	}
+    #lechuga {
+        display: none;
+        }
+        #reloj {
+            display: none;
+        }
+        #zanahoria {
+            display: none;
+        }
+        #hamburguesa {
+            display: none;
+        }
+}
+@media screen and (max-height: 1080px) and (max-width: 1920px){
+	.main-registro{
+		margin-top: 0%;
+	}
+	.registro-titulo {
+		font-size: 60px;
+		margin: 20px auto 10px auto;
+	}
+	.seccion-input {
+		margin-bottom: 15px;
+	}
+	.boton-ojo{
+		left: 370px;
+		width: 22px;
+		height: 22px;
+	}
+	.seccion-input.ultimo-input{
+		margin-bottom: 0px;
+	}
+    #lechuga {
+        display: none;
+        }
+        #reloj {
+            display: none;
+        }
+        #zanahoria {
+            display: none;
+        }
+        #hamburguesa {
+            display: none;
+        }
+}
