@@ -15,6 +15,7 @@ if (isset($_POST['registrar'])) {
    $guardar = $conecta -> query($insertar);
   if($guardar > 0){
     $numero = 1;
+    header("location:loginInterface.php");
   }else{
     $numero = 0;
   }
@@ -55,7 +56,7 @@ if (isset($_POST['registrar'])) {
           </div>
           <div class="form-group">
               <button><input class="botons" type="submit" value="Registrar" name="registrar" id="registrado"></button>
-              <button><input class="botons" type="submit" value="atras"></button>
+              <a class="botons" href="logout.php">Atras</a>
           </div>
       </form>
       

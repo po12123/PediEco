@@ -21,28 +21,12 @@ if (isset($_POST['guardar'])) {
         Apellidos_Encargado, NumeroCelular_Encargado,Email_Encargado, Password_Encargado, Permiso, Calificacion, Logo) 
         values ('$nombreEstablecimiento','$direccionEstablecimiento', '$nombreEncargado', '$apellidosEncargado', 
         '$numeroCelular','$emailEncargado','$passwordEncargado','$permiso','$calificacion','$binariosImagen')";
-        $res = mysqli_query($conecta, $query);
-        if ($res) {
-?>
-            <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                Registro insertado exitosamente
-            </div>
-        <?php
+        $res = $conecta->query($query);
+        if ($res > 0) {
+            $numero = 1;
+            header("location:loginInterface.php");
         } else {
-        ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                Error <?php echo mysqli_error($conecta); ?>
-            </div>
-<?php
-
+            $numero = 0;
         }
     }
 }
@@ -85,7 +69,7 @@ if (isset($_POST['guardar'])) {
           </div>
           <div class="form-group">
               <button><input class="botons" type="submit" value="Registrar" name="guardar"></button>
-              <button><input class="botons" type="submit" value="atras"></button>
+              <a class="botons" href="logout.php">Atras</a>
           </div>
       </form>
       <div id="imagenes">

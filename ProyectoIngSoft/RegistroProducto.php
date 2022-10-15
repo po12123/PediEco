@@ -7,8 +7,9 @@ if($varsesion = null || $varsesion = ''){
     echo 'No puede acceder aqui sin haber iniciado sesion';
     die();
 }
-if (isset($_REQUEST['guardar'])) {
+if (isset($_POST['guardar'])) {
     if (isset($_FILES['foto']['name'])) {
+        $numero = 0;
         $nombreProducto = $conecta -> real_escape_string($_POST['NombreProducto']);
         $descripcionProducto = $conecta -> real_escape_string($_POST['DescripcionProducto']);
         $tiempoDisponible = $conecta -> real_escape_string($_POST['TiempoProducto']);
@@ -21,28 +22,11 @@ if (isset($_REQUEST['guardar'])) {
         $binariosImagen = fread($imagenSubida, $tamanoArchivo);
         $binariosImagen = mysqli_escape_string($conecta, $binariosImagen);
         $query = "INSERT INTO producto (Nombres_Producto, Descripcion_Producto, Tiempo_Disponible, Cantidad_Producto, Precio_Producto ,Imagen_Producto, Disponible_Producto, Id_Establecimiento) values ('$nombreProducto','$descripcionProducto', '$tiempoDisponible', '$cantidadProducto', '$precioProducto','$binariosImagen','$disponibleProducto', '$idestablecimiento')";
-        $res = mysqli_query($conecta, $query);
-        if ($res) {
-?>
-            <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                Registro insertado exitosamente
-            </div>
-        <?php
+        $res = $conecta -> query($query);
+        if ($res > 0) {
+            $numero = 1;
         } else {
-        ?>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    <span class="sr-only">Close</span>
-                </button>
-                Error <?php echo mysqli_error($conecta); ?>
-            </div>
-<?php
-
+            $numero = 0;
         }
     }
 }
@@ -90,7 +74,7 @@ if (isset($_REQUEST['guardar'])) {
           </div>
           <div class="form-group">
               <button><input class="botons" type="submit" value="Registrar" name="guardar"></button>
-              <button><input class="botons" type="submit" value="atras"></button>
+              <a class="botons" href="logout.php">LogOut</a>
           </div>
       </form>
       <div id="imagenes">
@@ -102,5 +86,10 @@ if (isset($_REQUEST['guardar'])) {
     </div>
     
   </section>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    var x = <?php echo $numero;?>;
+  </script>
+  <script src="js/sweetAlert.js"></script>
 </body>
 </html>
