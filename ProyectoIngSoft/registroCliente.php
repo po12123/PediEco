@@ -15,7 +15,7 @@ if (isset($_POST['registrar'])) {
    $guardar = $conecta -> query($insertar);
   if($guardar > 0){
     $numero = 1;
-    header("location:loginInterface.php");
+    
   }else{
     $numero = 0;
   }
@@ -31,7 +31,7 @@ if (isset($_POST['registrar'])) {
   <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet"> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <link rel="stylesheet" href="css/style-registrarCliente.css">
+  <link rel="stylesheet" href="css/style-registroCliente.css">
   <title>Registro de cliente</title>
 </head>
 <body>

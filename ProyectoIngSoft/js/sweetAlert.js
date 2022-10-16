@@ -10,6 +10,9 @@ if(x > 0){
     allowEscapeKey: true,
     allowEnterKey: false,
     stopKetdownPropagation: false
+
+}).then(function(){
+    window.location = "catalogoAdmin.php";
 });
     event.preventDefault_();
 }

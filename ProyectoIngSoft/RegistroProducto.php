@@ -38,7 +38,7 @@ if (isset($_POST['guardar'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-registrarProducto.css">
   <title>Registro de producto</title>
 </head>
 <body>
@@ -74,7 +74,7 @@ if (isset($_POST['guardar'])) {
           </div>
           <div class="form-group">
               <button><input class="botons" type="submit" value="Registrar" name="guardar"></button>
-              <a class="botons" href="logout.php">LogOut</a>
+              <a class="botons" href="catalogoAdmin.php">Atras</a>
           </div>
       </form>
       <div id="imagenes">

@@ -24,7 +24,6 @@ if (isset($_POST['guardar'])) {
         $res = $conecta->query($query);
         if ($res > 0) {
             $numero = 1;
-            header("location:loginInterface.php");
         } else {
             $numero = 0;
         }
@@ -38,7 +37,7 @@ if (isset($_POST['guardar'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-registroEstablecimiento.css">
   <title>Registro de establecimiento</title>
 </head>
 <body>
