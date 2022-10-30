@@ -3,8 +3,8 @@ include 'includes/conecta.php';
 session_start();
 error_reporting(0);
 $varsesion = $_SESSION['Usuario'];
-if($varsesion = null || $varsesion = ''){
-    echo 'No puede acceder aqui sin haber iniciado sesion';
+if($varsesion == null || $varsesion == ''){
+    header("location:loginInterface.php");
     die();
 }
 if (isset($_POST['guardar'])) {

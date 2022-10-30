@@ -1,6 +1,11 @@
 <?php include('includes/conecta.php');
 session_start();
+error_reporting(0);
 $usuario = $_SESSION['Usuario'];
+if($varsesion == null || $varsesion == ''){
+   header("location:loginInterface.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
