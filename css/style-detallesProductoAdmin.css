@@ -1,0 +1,195 @@
+
+
+*{
+  font-family: 'Bungee';
+  color: #9E5344;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  transition: all .2s linear;
+  text-transform: capitalize;
+}
+
+html{
+  font-size: 100%;
+  overflow-x: hidden;
+}
+
+.contBoton{
+  max-width: 1200px;
+  margin:0 auto;
+  padding:3rem 2rem;
+  text-align: center;
+}
+
+.item-button  {
+  position: absolute; 
+  right: 20px; 
+  bottom: 40px;
+  width: 20% ;
+  background: #D9D9D9 ;
+  border: none ;
+  padding: 12px ;
+  color: #9E5344 ;
+  font-family: 'Bungee' ;
+  font-size: 18px ;
+  line-height: 10px;
+  height: 7px
+  
+}
+.btn-success  {
+  width: 10% ;
+  background: #D9D9D9 ;
+  border: none ;
+  padding: 12px ;
+  color: #9E5344 ;
+  font-family: 'Bungee' ;
+  font-size: 14px ;
+  line-height: 10px;
+  height: 10px
+}
+
+body::after {
+  
+  content: "";
+  background: url("https://elviajerofeliz.com/wp-content/uploads/2019/11/Comida-t%C3%ADpica-de-India-_-10-Platos-Imprescindibles.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  overflow: scroll;
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;   
+}
+
+body {
+   height: 100%;
+}
+.container{
+  font-family: 'Bungee';
+  max-width: 1200px;
+  margin:0 auto;
+  /*padding:3rem 2rem;*/
+  top: 50%;
+  left: 50%;
+
+}
+.h1
+{
+  font-size: 40px;
+  font-weight: 800px;
+}
+.comentarios
+{
+  width: 500px;
+  height: 300px;
+}
+
+.h3{
+
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+
+
+
+  margin: .4rem 0;
+}
+
+@media (max-width:991px){
+
+  html{
+     font-size: 55%;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .products-preview .preview img{
+     width: 100%;
+  }
+
+}
+
+@media (max-width:450px){
+
+  html{
+     font-size: 50%;
+  }
+
+}
+
+
+.item {
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 20px;
+  
+}
+
+.item-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.item-image {
+  height: 300px;
+  width: 40%;
+  
+}
+
+.item-details {
+
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px 15px;
+}
+
+.item-details > .item-price {
+  margin: 0;
+}
+
+/* ? SHOPPING CART */
+.shopping-cart-items {
+  padding: 20px 0px;
+}
+
+.shopping-cart-header {
+  border-bottom: 1px solid #ccc;
+}
+
+.shopping-cart-image {
+  max-width: 200px;
+  border-radius: 20px;
+}
+
+.shopping-cart-quantity-input {
+  max-width: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #eee;
+  padding: 5px;
+}
+
+.shopping-cart-total {
+  min-height: 96px;
+}
+.item-img{
+
+  display: flex;
+  text-align:center;
+  align-items: center;
+}
+.col-6 {
+   display: flex;
+   align-items: center;
+}
+
+

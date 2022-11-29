@@ -1,0 +1,150 @@
+
+
+*{
+   font-family: 'Merienda One';
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;
+   text-transform: capitalize;
+}
+
+body::after {
+  
+   content: "";
+   background: url("https://elviajerofeliz.com/wp-content/uploads/2019/11/Comida-t%C3%ADpica-de-India-_-10-Platos-Imprescindibles.jpg");
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   overflow: scroll;
+   background-size: cover;
+   opacity: 0.4;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: fixed;
+   z-index: -1;   
+ }
+ 
+ body {
+    height: 100%;
+ }
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+.contBoton{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+   text-align: center;
+}
+
+.botons {
+   width: 100%;
+   background: #D9D9D9;
+   border: none;
+   padding: 12px;
+   color: #9E5344;
+   font-family: 'Bungee';
+   font-size: 25px;
+ }
+
+body{
+   background: #D8CEAB;
+}
+
+.container{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+}
+
+.container .title{
+   font-size: 6rem;
+   color:#9E5344;
+   margin-top: 13rem;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+   font-family: 'Bungee';
+}
+
+.container .subtitle{
+   font-size: 3.5rem;
+   color:#9E5344;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+   font-family: 'Bungee';
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid #ccc;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+.container .products-container .product:hover{
+   outline: .2rem solid #222;
+   outline-offset: 0;
+}
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product img{
+   width: 100%;
+}
+
+
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+
+
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   .products-preview .preview img{
+      width: 100%;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+}
