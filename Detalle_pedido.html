@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style-Detalle-Pedido.css">
+    <link href='https://fonts.googleapis.com/css?family=Bungee' rel='stylesheet'>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merienda+One" />
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/script-carrito.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Carrito</title>
+</head>
+
+<body >
+<div class="w3-sidebar w3-bar-block w3-border-right ColorSide w3-mobile" id="mySidebar">
+                <button onclick="w3_close()" class="w3-bar-item w3-large">Cerrar &times;</button>
+                <a href="index.php" class="w3-bar-item w3-button w3-text-red">PEDIECO</a>
+                <a href="#" class="w3-bar-item w3-button w3-text-red ">Encargado:
+                </a>
+                  <a href="carrito.php" class="w3-bar-item w3-button w3-text-red">Pedido</a>
+                  <a href="logout.php" class="w3-bar-item w3-button w3-text-red">Cerrar Sesión</a>
+                  
+            </div>
+            <header class="w3-bar w3-white w3-border w3-large">
+                <div class="w3-white">
+                  <button class="w3-button w3-white w3-bar-item" onclick="w3_open()" id="menuMovil">☰</button>
+                </div>
+                <div id="leftHeader">
+                <a href="index.php" class="w3-bar-item w3-button w3-text-red">PEDIECO</a>
+                  <a href="#" class="w3-bar-item w3-button w3-white w3-text-red w3-right">Encargado:
+                  </a>
+                  <a href="carrito.php" class="w3-bar-item w3-button w3-white w3-text-red w3-right">Pedido</a>
+                  <a href="logout.php" class="w3-bar-item w3-button w3-white w3-text-red w3-right">Cerrar Sesión</i></a>
+                </div>         
+            </header>
+    <!-- Seccion carrito -->
+    <section class="shopping-cart">
+        <h1 class="text-center"><b>Detalle de Pedido</b></h1>
+            <hr>
+        <div class="container">
+            <div class="parrafo">
+                <h4 class="text-center"><b> <strong>Datos del Cliente</strong> </b></h4>
+                <h4><b>Establecimiento:</b></h4>
+                <h4><b>Nombre de Cliente</b> </h4>
+                <h4><b>Telefono de cliente:</b> </h4>
+                <h4><b>Fecha/hora de Pedido:</b> </h4>
+                <h4><b>Nombre de pedidos:</b> </h4>
+                <h4><b>Cantidad:</b> U.</h4>
+                <h4><b>Precio Total:</b> Bs.</h4>
+                </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6><b>Producto</b></h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate"><b>Precio</b></h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6><b>Cantidad</b></h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ? Productos en el inicio del carrito -->
+            
+        <div class="shopping-cart-items shoppingCartItemsContainer">
+
+        </div>
+                    
+        
+            <!-- Total -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">0Bs</p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                            data-delay="2000">
+                            <div class="toast-header">
+                                <span>✅</span>
+                                <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div>
+                            </div>
+                        <a href="#" class="btn btn-success ml-auto comprarButton" >Atras</a>
+                        <a href="catalogo.php" class="btn btn-success ml-auto comprarButton" >Pedido</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- total -->
+
+            <!-- Mensaje compra -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Pronto recibirá su pedido</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MODAL COMPRA -->
+
+
+        </div>
+
+    </section>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+        <script>
+        function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+    
+</body>
+
+</html>
